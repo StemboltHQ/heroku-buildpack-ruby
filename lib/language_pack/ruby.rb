@@ -28,7 +28,7 @@ class LanguagePack::Ruby < LanguagePack::Base
   end
 
   def self.bundler
-    @@bundler ||= LanguagePack::Helpers::BundlerWrapper.new.install
+    @@bundler ||= LanguagePack::Helpers::BundlerWrapper.new({gemfile_path: Pathname.new("./sandbox/Gemfile")}).install
   end
 
   def bundler
